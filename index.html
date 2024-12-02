@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>    
+        
+        
+        <script>
+            // when the document is loaded...
+            window.onload = () => {
+                // fetch the data from the api
+                fetch('/api')
+                    .then(res => res.json()) // then, once we get the data, parse it as json
+                    .then(data => { // then, once we have the data...
+                        document.getElementById('name').innerText = data.name;
+                        document.getElementById('city').innerText = data.city;
+                        document.getElementById('state').innerText = data.state;
+                        document.getElementById('country').innerText = data.country;
+                        document.getElementById('extra').innerText = data.extra;
+            
+                        // update the elements on the website with the data from the json file
+                    });
+            }
+            </script>
+        
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+    </head>
+    <body>
+        <h1 id="name"></h1>
+        <p id="city"></p>
+        <p id="state"></p>
+        <p id="country"></p>
+        <p id="extra"></p>
+    </body>
+</html>
